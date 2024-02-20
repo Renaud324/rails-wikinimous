@@ -5,6 +5,29 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+
+  # get "articles", to: "articles#index"
+
+  # get "articles/:id", to: "articles#show", as: :article
+
+  # get "articles/:id/edit", to: "articles#edit", as: :edit_article
+
+  # patch  "articles/:id",      to: "articles#update"
+
+
+  resources :articles
+
 end
+
+
+# get    "restaurants",          to: "restaurants#index"
+# # Create
+# get    "restaurants/new",      to: "restaurants#new",  as: :new_restaurant
+# post   "restaurants",          to: "restaurants#create"
+# # Read one - The `show` route needs to be *after* `new` route.
+# get    "restaurants/:id",      to: "restaurants#show", as: :restaurant
+# # Update
+# get    "restaurants/:id/edit", to: "restaurants#edit", as: :edit_restaurant
+# patch  "restaurants/:id",      to: "restaurants#update"
+# # Delete
+# delete "restaurants/:id",      to: "restaurants#destroy"
